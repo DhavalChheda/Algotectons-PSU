@@ -1,0 +1,54 @@
+// Bar Chart Example from Lynda 
+
+void setup(){
+  size(600,600);
+  smooth();
+
+   
+}
+
+void draw (){
+  background (118,109,109);
+  bar(1,8, 125.48926, "Jammu Kashmir");
+  bar(2,8, 68.56509, "Himachal P");
+  bar(3,8, 277.04236, "Punjab");
+  bar(4,8, 10.54686, "Chandigarh");
+  bar(5,8, 101.16752, "Uttarakhand");
+  bar(6,8, 16.753235, "Delhi NCT");
+  bar(7,8, 367.21012, "Rajasthan");
+  bar(8,8, 440.581477, "UP");
+  
+   textAlign(CENTER);
+   text("Population Bar Graph of Indian States", width/2, 30);
+   fill( 285);
+   
+  
+}
+  
+  //barGraph function
+
+void bar ( int i, int n, float outcome, String label){
+
+  // determine the height,width and spacing for the bar
+  
+  int x = int ( width*i/(n+1)); // determines where the each of the bar should go, x cordinate 
+  int spaceBars = 20; // space between bars
+  float wide = ( width - spaceBars*(n+1))/n;
+
+//Draw the bars
+rectMode ( CENTER);
+noStroke();
+fill ( 203,199,199);
+rect(x, height-outcome/2, wide, outcome);
+
+// labels
+
+textAlign(CENTER);
+fill(200);
+text (label, x, height-outcome-10);
+fill(0);
+text(outcome, x , height-outcome+10);
+
+}
+  
+  
